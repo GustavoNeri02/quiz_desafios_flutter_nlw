@@ -11,4 +11,9 @@ class AppGradients {
     0.0,
     0.695
   ], transform: GradientRotation(2.13959913 * pi));
+
+  static final linearRedBlackBluegray = LinearGradient(
+      colors: [Colors.red, Colors.black, Colors.blueGrey],
+      stops: [0, 0.5, 1],
+      transform: GradientRotation(0.3));
 }
