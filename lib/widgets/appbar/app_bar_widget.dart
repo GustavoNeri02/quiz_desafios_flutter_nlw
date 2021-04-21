@@ -11,7 +11,6 @@ class AppBarWidget extends PreferredSize {
             height: 250,
             child: Stack(
               children: [
-                //SizedBox(height: 65,),
                 Container(
                   height: 161,
                   decoration: BoxDecoration(
