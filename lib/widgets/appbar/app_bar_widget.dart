@@ -49,7 +49,6 @@ class AppBarWidget extends PreferredSize {
                     ),
                   ),
                 ),
-                //SizedBox(height: 33,),
                 Align(
                   alignment: Alignment(0.0, 1),
                   child: ScoreCardWidget(),
