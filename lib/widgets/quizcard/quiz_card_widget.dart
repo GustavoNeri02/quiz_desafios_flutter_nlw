@@ -37,8 +37,6 @@ class QuizCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 177,
-      width: 160,
       decoration: BoxDecoration(
         color: Colors.white,
         border: Border.all(color: Colors.grey),
@@ -48,11 +46,9 @@ class QuizCardWidget extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Image.asset(image),
-            SizedBox(
-              height: 21,
-            ),
             Text(
               label,
               style: GoogleFonts.notoSans(
@@ -61,16 +57,13 @@ class QuizCardWidget extends StatelessWidget {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
-              height: 24,
-            ),
             Row(
               children: [
                 Text(
                   "3 de 10",
                   style: AppTextStyles.body11,
                 ),
-                SizedBox(width: 21,),
+                SizedBox(width: 15,),
                 Expanded(
                   flex: 1,
                   child: LinearProgressIndicator(
