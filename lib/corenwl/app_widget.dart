@@ -1,5 +1,5 @@
 
-import 'package:aula_1_flutter_nlw/widgets/home/home_page.dart';
+import 'package:aula_1_flutter_nlw/home/home_page.dart';
 import 'package:flutter/material.dart';
 
 class AppWidget extends StatelessWidget {

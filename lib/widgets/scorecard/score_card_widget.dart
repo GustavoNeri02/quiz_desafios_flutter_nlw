@@ -22,16 +22,18 @@ class ScoreCardWidget extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(left: 24),
+                padding: const EdgeInsets.only(left: 38, right: 42),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Vamos Começar!",
+                      "Vamos Começar ^-^",
                       style: AppTextStyles.heading,
                     ),
+                    Divider(color: Colors.white,height: 8,),
                     Text(
-                      "Complete os desafios e avance em conhecimento!",
+                      "Complete os desafios e avance em conhecimento",
                       style: AppTextStyles.body,
                     ),
                   ],
