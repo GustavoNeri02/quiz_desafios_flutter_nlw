@@ -1,16 +1,19 @@
-import 'package:aula_1_flutter_nlw/corenwl/app_colors.dart';
 import 'package:aula_1_flutter_nlw/corenwl/app_images.dart';
 import 'package:aula_1_flutter_nlw/corenwl/app_text_styles.dart';
+import 'package:aula_1_flutter_nlw/widgets/linearprogressbar/linear_progress_indicator_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class QuizCardWidget extends StatelessWidget {
   final String label;
-  QuizCardWidget({Key key, @required this.label}) :
-        assert(["Gerenciamento de Estado", "Construindo Interfaces",
-          "Interação Nativa", "Widgets do Flutter"].contains(label)),
-        super (key: key);
-
+  QuizCardWidget({Key key, @required this.label})
+      : assert([
+          "Gerenciamento de Estado",
+          "Construindo Interfaces",
+          "Interação Nativa",
+          "Widgets do Flutter"
+        ].contains(label)),
+        super(key: key);
 
   final types = {
     "Gerenciamento de Estado": {
@@ -28,11 +31,6 @@ class QuizCardWidget extends StatelessWidget {
   };
 
   String get image => types[label]['image'];
-
-
-
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -63,14 +61,10 @@ class QuizCardWidget extends StatelessWidget {
                   "3 de 10",
                   style: AppTextStyles.body11,
                 ),
-                SizedBox(width: 15,),
+                SizedBox(width: 15),
                 Expanded(
                   flex: 1,
-                  child: LinearProgressIndicator(
-                    value: 0.3,
-                    valueColor: AlwaysStoppedAnimation(AppColors.chartPrimary),
-                    backgroundColor: AppColors.chartSecondary,
-                  ),
+                  child: LinearProgressIndicatorWidget(value: 0.3),
                 ),
               ],
             )
