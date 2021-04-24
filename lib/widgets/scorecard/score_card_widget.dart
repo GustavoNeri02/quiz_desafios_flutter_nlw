@@ -31,7 +31,10 @@ class ScoreCardWidget extends StatelessWidget {
                       "Vamos Começar ^-^",
                       style: AppTextStyles.heading,
                     ),
-                    Divider(color: Colors.white,height: 8,),
+                    Divider(
+                      color: Colors.white,
+                      height: 8,
+                    ),
                     Text(
                       "Complete os desafios e avance em conhecimento",
                       style: AppTextStyles.body,
@@ -40,7 +43,8 @@ class ScoreCardWidget extends StatelessWidget {
                 ),
               ),
             )
-          ],),
+          ],
+        ),
       ),
     );
   }

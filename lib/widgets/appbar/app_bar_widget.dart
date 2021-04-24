@@ -1,10 +1,12 @@
 import 'package:aula_1_flutter_nlw/corenwl/app_gradients.dart';
 import 'package:aula_1_flutter_nlw/corenwl/app_text_styles.dart';
+import 'package:aula_1_flutter_nlw/models/user_model.dart';
 import 'package:aula_1_flutter_nlw/widgets/scorecard/score_card_widget.dart';
 import 'package:flutter/material.dart';
 
 class AppBarWidget extends PreferredSize {
-  AppBarWidget()
+  final UserModel userModel;
+  AppBarWidget({required this.userModel})
       : super(
           preferredSize: Size.fromHeight(250),
           child: Container(
@@ -28,7 +30,7 @@ class AppBarWidget extends PreferredSize {
                             style: AppTextStyles.title,
                             children: [
                               TextSpan(
-                                text: "Gustavo",
+                                text: userModel.name,
                                 style: AppTextStyles.titleBold,
                               )
                             ],
@@ -40,8 +42,7 @@ class AppBarWidget extends PreferredSize {
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             image: DecorationImage(
-                              image: NetworkImage(
-                                  "https://avatars.githubusercontent.com/u/47922321?s=400&u=bcc93afb08677f738aa942e92d9341490f9a0053&v=4"),
+                              image: NetworkImage(userModel.photoUrl),
                             ),
                           ),
                         ),

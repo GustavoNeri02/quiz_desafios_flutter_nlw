@@ -8,8 +8,8 @@ class AnswerWidget extends StatelessWidget {
   final bool isSelect;
 
   AnswerWidget({
-    Key key,
-    @required this.titulo,
+    Key? key,
+    required this.titulo,
     this.isRight = false,
     this.isSelect = false,
   }) : super(key: key);
@@ -41,7 +41,8 @@ class AnswerWidget extends StatelessWidget {
           color: isSelect ? _selectedColorCardRight : AppColors.white,
           borderRadius: BorderRadius.circular(10),
           border: Border.fromBorderSide(BorderSide(
-            color: isSelect ? _selectedBorderCardRight : AppColors.chartSecondary,
+            color:
+                isSelect ? _selectedBorderCardRight : AppColors.chartSecondary,
           )),
         ),
         child: Padding(
@@ -51,8 +52,9 @@ class AnswerWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: Text(titulo,
-                    style:
-                    isSelect ? _selectedTextStyleRight : AppTextStyles.body),
+                    style: isSelect
+                        ? _selectedTextStyleRight
+                        : AppTextStyles.body),
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 42),
@@ -60,13 +62,12 @@ class AnswerWidget extends StatelessWidget {
                   height: 24,
                   width: 24,
                   decoration: BoxDecoration(
-                      color:
-                          isSelect ? _selectedColorRight : AppColors.white,
-                      borderRadius: BorderRadius.circular(500),
-                      border: Border.fromBorderSide(BorderSide(
-                          color: isSelect
-                              ? _selectedBorderRight
-                              : AppColors.chartSecondary)),
+                    color: isSelect ? _selectedColorRight : AppColors.white,
+                    borderRadius: BorderRadius.circular(500),
+                    border: Border.fromBorderSide(BorderSide(
+                        color: isSelect
+                            ? _selectedBorderRight
+                            : AppColors.chartSecondary)),
                   ),
                   child: Stack(alignment: Alignment.center, children: [
                     //Icon(Icons.circle,color: AppColors.darkGreen, size: 32,),

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class QuestionIndicatorWidget extends StatefulWidget {
-  QuestionIndicatorWidget({Key key}) : super(key: key);
+  QuestionIndicatorWidget({Key? key}) : super(key: key);
   @override
   _ChallengeIndicatorWidgetState createState() =>
       _ChallengeIndicatorWidgetState();

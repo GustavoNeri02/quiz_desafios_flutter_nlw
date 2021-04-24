@@ -6,7 +6,7 @@ import 'package:aula_1_flutter_nlw/widgets/quizanswer/answer_widget.dart';
 import 'package:flutter/material.dart';
 
 class ChallengePage extends StatefulWidget {
-  ChallengePage({Key key}) : super(key: key);
+  ChallengePage({Key? key}) : super(key: key);
   @override
   _ChallengePageState createState() => _ChallengePageState();
 }
@@ -32,22 +32,22 @@ class _ChallengePageState extends State<ChallengePage> {
                 title: "O que o Flutter faz em sua totalidade?",
               ),
               AnswerWidget(
-                  isRight: true,
-                  isSelect: true,
-                  titulo:
-                      "Possibilita a criação de aplicativos compilados nativamente",
-              ),
-              AnswerWidget(
-                  titulo:
-                  "Possibilita a criação de aplicativos compilados nativamente",
+                isRight: true,
+                isSelect: true,
+                titulo:
+                    "Possibilita a criação de aplicativos compilados nativamente",
               ),
               AnswerWidget(
                 titulo:
-                "Possibilita a criação de aplicativos compilados nativamente",
+                    "Possibilita a criação de aplicativos compilados nativamente",
               ),
               AnswerWidget(
                 titulo:
-                "Possibilita a criação de aplicativos compilados nativamente",
+                    "Possibilita a criação de aplicativos compilados nativamente",
+              ),
+              AnswerWidget(
+                titulo:
+                    "Possibilita a criação de aplicativos compilados nativamente",
               ),
             ],
           ),

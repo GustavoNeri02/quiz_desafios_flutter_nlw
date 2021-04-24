@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 
 class LinearProgressIndicatorWidget extends StatelessWidget {
   final double value;
-  LinearProgressIndicatorWidget({Key key, @required this.value})
+  LinearProgressIndicatorWidget({Key? key, required this.value})
       : super(key: key);
 
   @override

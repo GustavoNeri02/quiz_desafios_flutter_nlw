@@ -6,14 +6,14 @@ import 'package:google_fonts/google_fonts.dart';
 
 class QuizCardWidget extends StatelessWidget {
   final String label;
-  QuizCardWidget({Key key, @required this.label})
-      : assert([
-          "Gerenciamento de Estado",
-          "Construindo Interfaces",
-          "Interação Nativa",
-          "Widgets do Flutter"
-        ].contains(label)),
-        super(key: key);
+  final String completed;
+  final double porcent;
+  QuizCardWidget({
+    Key? key,
+    required this.label,
+    required this.completed,
+    required this.porcent,
+  }) : super(key: key);
 
   final types = {
     "Gerenciamento de Estado": {
@@ -30,7 +30,7 @@ class QuizCardWidget extends StatelessWidget {
     },
   };
 
-  String get image => types[label]['image'];
+  String? get image => types[label]!['image'];
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class QuizCardWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            Image.asset(image),
+            Image.asset(AppImages.blocks),
             Text(
               label,
               style: GoogleFonts.notoSans(
@@ -58,13 +58,13 @@ class QuizCardWidget extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "3 de 10",
+                  completed,
                   style: AppTextStyles.body11,
                 ),
                 SizedBox(width: 15),
                 Expanded(
                   flex: 1,
-                  child: LinearProgressIndicatorWidget(value: 0.3),
+                  child: LinearProgressIndicatorWidget(value: porcent),
                 ),
               ],
             )

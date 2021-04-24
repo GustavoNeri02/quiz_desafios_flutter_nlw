@@ -4,36 +4,36 @@ import 'package:google_fonts/google_fonts.dart';
 
 class LevelButtonWidget extends StatelessWidget {
   final String label;
-  LevelButtonWidget({Key key, @required this.label}) :
-        assert(["Fácil", "Médio", "Difícil", "Perito"].contains(label)),
-        super (key: key);
+  LevelButtonWidget({Key? key, required this.label})
+      : assert(["Fácil", "Médio", "Difícil", "Perito"].contains(label)),
+        super(key: key);
 
   final types = {
-    "Fácil" : {
+    "Fácil": {
       "color": AppColors.levelButtonFacil,
       "textColor": AppColors.levelButtonTextFacil,
       "borderColor": AppColors.levelButtonBorderFacil,
     },
-    "Médio" : {
+    "Médio": {
       "color": AppColors.levelButtonMedio,
       "textColor": AppColors.levelButtonTextMedio,
       "borderColor": AppColors.levelButtonBorderMedio,
     },
-    "Difícil" : {
+    "Difícil": {
       "color": AppColors.levelButtonDificil,
       "textColor": AppColors.levelButtonTextDificil,
       "borderColor": AppColors.levelButtonBorderDificil,
     },
-    "Perito" : {
+    "Perito": {
       "color": AppColors.levelButtonPerito,
       "textColor": AppColors.levelButtonTextPerito,
       "borderColor": AppColors.levelButtonBorderPerito,
     }
   };
 
-  Color get color => types[label]['color'];
-  Color get textColor => types[label]['textColor'];
-  Color get borderColor => types[label]['borderColor'];
+  Color? get color => types[label]!['color'];
+  Color? get textColor => types[label]!['textColor'];
+  Color? get borderColor => types[label]!['borderColor'];
 
   @override
   Widget build(BuildContext context) {
@@ -42,14 +42,13 @@ class LevelButtonWidget extends StatelessWidget {
       height: 32,
       decoration: BoxDecoration(
         color: color,
-        border: Border.all(color: borderColor),
+        border: Border.all(color: borderColor!),
         borderRadius: BorderRadius.circular(28),
       ),
-      child:Center(
-        child: Text(label,
-          style: GoogleFonts.notoSans(
-              color: textColor,
-              fontSize: 13),
+      child: Center(
+        child: Text(
+          label,
+          style: GoogleFonts.notoSans(color: textColor, fontSize: 13),
         ),
       ),
     );
