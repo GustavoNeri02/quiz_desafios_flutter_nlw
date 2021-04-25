@@ -1,16 +1,5 @@
 # aula_1_flutter_nlw
 
-Quiz desenvolvido com auxilio da plataforma Next Level Week, aula 01
+App DevQuiz do NLW5 em Flutter
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![1 - NLW #05 - 1400x900](https://user-images.githubusercontent.com/47922321/116000115-4a61dd00-a5c5-11eb-9de9-90aa017279e4.jpg)
