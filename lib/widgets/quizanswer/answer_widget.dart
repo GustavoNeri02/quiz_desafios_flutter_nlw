@@ -6,12 +6,17 @@ class AnswerWidget extends StatelessWidget {
   final String titulo;
   final bool isRight;
   final bool isSelect;
+  final bool disabled;
+  final VoidCallback ontap;
 
   AnswerWidget({
     Key? key,
     required this.titulo,
     this.isRight = false,
+    // ignore: non_constant_identifier_names
     this.isSelect = false,
+    required this.ontap,
+    required this.disabled,
   }) : super(key: key);
 
   Color get _selectedColorRight =>
@@ -33,53 +38,60 @@ class AnswerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 16),
-      child: Container(
-        height: 72,
-        decoration: BoxDecoration(
-          color: isSelect ? _selectedColorCardRight : AppColors.white,
-          borderRadius: BorderRadius.circular(10),
-          border: Border.fromBorderSide(BorderSide(
-            color:
-                isSelect ? _selectedBorderCardRight : AppColors.chartSecondary,
-          )),
-        ),
+    return IgnorePointer(
+      ignoring: disabled,
+      child: GestureDetector(
+        onTap: ontap,
         child: Padding(
-          padding: const EdgeInsets.all(16),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                child: Text(titulo,
-                    style: isSelect
-                        ? _selectedTextStyleRight
-                        : AppTextStyles.body),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 42),
-                child: Container(
-                  height: 24,
-                  width: 24,
-                  decoration: BoxDecoration(
-                    color: isSelect ? _selectedColorRight : AppColors.white,
-                    borderRadius: BorderRadius.circular(500),
-                    border: Border.fromBorderSide(BorderSide(
-                        color: isSelect
-                            ? _selectedBorderRight
-                            : AppColors.chartSecondary)),
+          padding: const EdgeInsets.only(top: 16),
+          child: Container(
+            height: 72,
+            decoration: BoxDecoration(
+              color: isSelect ? _selectedColorCardRight : AppColors.white,
+              borderRadius: BorderRadius.circular(10),
+              border: Border.fromBorderSide(BorderSide(
+                color: isSelect
+                    ? _selectedBorderCardRight
+                    : AppColors.chartSecondary,
+              )),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Expanded(
+                    child: Text(titulo,
+                        style: isSelect
+                            ? _selectedTextStyleRight
+                            : AppTextStyles.body),
                   ),
-                  child: Stack(alignment: Alignment.center, children: [
-                    //Icon(Icons.circle,color: AppColors.darkGreen, size: 32,),
-                    Icon(
-                      _selectedIconRight,
-                      size: 16,
-                      color: AppColors.white,
+                  Padding(
+                    padding: const EdgeInsets.only(left: 42),
+                    child: Container(
+                      height: 24,
+                      width: 24,
+                      decoration: BoxDecoration(
+                        color: isSelect ? _selectedColorRight : AppColors.white,
+                        borderRadius: BorderRadius.circular(500),
+                        border: Border.fromBorderSide(BorderSide(
+                            color: isSelect
+                                ? _selectedBorderRight
+                                : AppColors.chartSecondary)),
+                      ),
+                      child: Stack(alignment: Alignment.center, children: [
+                        //Icon(Icons.circle,color: AppColors.darkGreen, size: 32,),
+                        Icon(
+                          _selectedIconRight,
+                          size: 16,
+                          color: AppColors.white,
+                        ),
+                      ]),
                     ),
-                  ]),
-                ),
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

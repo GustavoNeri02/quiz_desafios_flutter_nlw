@@ -4,7 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
 class QuestionIndicatorWidget extends StatefulWidget {
-  QuestionIndicatorWidget({Key? key}) : super(key: key);
+  final int currPage;
+  final int lenght;
+
+  QuestionIndicatorWidget({
+    Key? key,
+    required this.currPage,
+    required this.lenght}) : super(key: key);
+
   @override
   _ChallengeIndicatorWidgetState createState() =>
       _ChallengeIndicatorWidgetState();
@@ -15,19 +22,19 @@ class _ChallengeIndicatorWidgetState extends State<QuestionIndicatorWidget> {
   Widget build(BuildContext context) {
     return Expanded(
       child: Padding(
-        padding: const EdgeInsets.only(top: 70, left: 20, right: 20),
+        padding: const EdgeInsets.only(left: 20, right: 20),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Questão 04", style: AppTextStyles.bodyLightGrey15),
-                Text("de 10", style: AppTextStyles.bodyLightGrey15),
+                Text("Questão ${widget.currPage}", style: AppTextStyles.bodyLightGrey15),
+                Text("de ${widget.lenght}", style: AppTextStyles.bodyLightGrey15),
               ],
             ),
-            LinearProgressIndicatorWidget(value: 0.4),
+            LinearProgressIndicatorWidget(value: widget.currPage/widget.lenght),
           ],
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         ),
       ),
     );
