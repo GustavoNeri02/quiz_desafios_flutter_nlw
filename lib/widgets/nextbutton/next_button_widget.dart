@@ -21,6 +21,17 @@ class NextButtonWidget extends StatelessWidget {
         this.fontColor = AppColors.lightGrey,
         this.borderColor = AppColors.chartSecondary;
 
+  NextButtonWidget.purple({required this.label, required this.onTap}) :
+        this.backgroundColor = AppColors.purple,
+        this.fontColor = AppColors.white,
+        this.borderColor = AppColors.purple;
+
+  NextButtonWidget.transparent({required this.label, required this.onTap}) :
+        this.backgroundColor = Colors.transparent,
+        this.fontColor = AppColors.black,
+        this.borderColor = Colors.transparent;
+
+
 
   NextButtonWidget({
     Key? key,
@@ -29,7 +40,7 @@ class NextButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.symmetric(horizontal: 20),
       child: Container(
         height: 48,
 

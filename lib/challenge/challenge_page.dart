@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:aula_1_flutter_nlw/challenge/challenge_controller.dart';
 import 'package:aula_1_flutter_nlw/models/question_model.dart';
+import 'package:aula_1_flutter_nlw/resultpage/result_page.dart';
 import 'package:aula_1_flutter_nlw/widgets/nextbutton/next_button_widget.dart';
 import 'package:aula_1_flutter_nlw/widgets/questionindicator/question_indicator_widget.dart';
 import 'package:aula_1_flutter_nlw/widgets/quiz/quiz_widget.dart';
@@ -39,7 +40,7 @@ class _ChallengePageState extends State<ChallengePage> {
     return Scaffold(
       appBar: PreferredSize(
         child: SafeArea(
-          top: true,
+          top: true, bottom: true,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -69,30 +70,35 @@ class _ChallengePageState extends State<ChallengePage> {
               .toList(),
         ),
       ),
-      bottomNavigationBar: SafeArea(
-          bottom: true,
-          child: ValueListenableBuilder<int>(
-              valueListenable: controller.currentPageNotifier,
-              builder: (context, value, _) => Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        if (value < widget.questions.length)
-                          Expanded(
-                              child: NextButtonWidget.white(
-                            label: "Pular",
-                            onTap: () {
-                              NextPage();
-                            },
-                          )),
-                        if (value == widget.questions.length)
-                          Expanded(
-                              child: NextButtonWidget.green(
-                            label: "Confirmar",
-                            onTap: () {
-                              Navigator.pop(context);
-                            },
-                          )),
-                      ]))),
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(bottom: 20),
+        child: ValueListenableBuilder<int>(
+            valueListenable: controller.currentPageNotifier,
+            builder: (context, value, _) => Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    children: [
+                      if (value < widget.questions.length)
+                        Expanded(
+                            child: NextButtonWidget.white(
+                          label: "Pular",
+                          onTap: () {
+                            NextPage();
+                          },
+                        )),
+                      if (value == widget.questions.length)
+                        Expanded(
+                            child: NextButtonWidget.green(
+                          label: "Confirmar",
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => ResultPage()));
+                          },
+                        )),
+
+                    ])),
+      ),
     );
   }
 }
